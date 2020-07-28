@@ -2,9 +2,6 @@ let fruit = 36;
 let height = 1.72;
 let weight = 55;
 let birth = 1986;
-let day = 22;
-let month = "setembro";
-let sign = "libra";
 let year = 2020;
 var friends = ['Kraken','Kelvin','Rhuan'];
 
@@ -52,10 +49,13 @@ console.log(myfriends);
 /* 5 - Crie uma função que receba o dia e o mês do seu aniversário e retorne
   seu signo :) */
 
-const birthday = (day,month,sign) => {
-    return `O meu aniversário é no dia ${day} de ${month} e o signo é ${sign}.`;
+const birthday = (day,month) => {
+    const isvirgo = (day >= 23 && day <= 31 && month === "august") || 
+    (day >= 1 && day <= 22 && month === "september");
+
+    if (isvirgo) return "Virgo";
 };
 
-const an = birthday(day,month,sign);
+const sign = birthday(22, "september");
 
-console.log(an);
+console.log(sign);
